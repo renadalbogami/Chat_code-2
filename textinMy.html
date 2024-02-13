@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!--<meta name="description" content="All-inclusive insight platform for tracking and managing orders, services, tickets, and more.">-->
+    <!--<meta name="keywords" content="Order Tracking, Service Tracking, Tickets, KPI, Dashboard, Complaints">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.css">
+    <link rel="stylesheet" href="{% static 'css/AI_monitoring.css' %}"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- add link ghaida test -->
+   
+    <link rel="stylesheet" href="{% static 'css/AI_CSS/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/AI_CSS/style.css' %}">
+    <!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/bootstrap1.min.css' %}"> -->
+
+    <title>Smart Monitoring2</title>
+</head>
+<body id="content" class="tundra locale_en" style="overflow-x: auto;">	 
+<div class="grid-container">
+  <header>
+  </header>
+    <main>
+        <div class="menu" style="position: fixed;">
+            <div class="sidebar" id="sidebar" style="position: fixed;">
+                <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                <ul>
+                <li class="menu-title" style="padding: 5%; margin-left: 6%; font-weight: bold;">
+                 
+                <span>Smart Monitoring</span></li>
+                <br>
+                </div>
+                </div>
+                </div>
+                
+        </div>
+        <div class="content">
+        </div>
+        <div class="grid-item">
+            
+              <br>
+              <br> 
+              <br>
+              <br>
+        </div>
+        <div class="grid-item"></div>
+        <div class="grid-item">
+           
+            <div id="chart"></div>
+
+        </div>
+    </main>
+  
+</div>
+<script src="{% static '/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static '/jquery-.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'js/feather.min.js'%} "></script>
+<script src="{% static 'js/plugins/slimscroll/jquery.slimscroll.min.js'%} "></script>
+<script src="{% static 'js/script.js'%} "></script>
+<script src="{% static 'plugins/apexchart/apexcharts.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3/dist/apexcharts.min.js"></script>
+<script>
+          var options = {
+            series: [
+            {
+            name: "(Actual)",
+            data: [6, 11, 30, 24, 19, 22 ,16]
+          },
+          {
+            name: "(Predictive)",
+            data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+          }, 
+                 ],
+          chart: {
+        height: 450,
+        width:900,
+          type: 'line',
+        },
+        forecastDataPoints: {
+          count: 11
+        },
+        stroke: {
+          width: 5,
+          curve: 'smooth'
+        },
+        
+      xaxis: {
+          categories: [ '01 Jan', '02 Jan','03 Jan' ,'04 Jan','05 Jan' ,'1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM ', '9:00 PM',
+            '10:00 PM', '11:00 PM'],
+          tickAmount: 10,
+        },
+        colors: ['#8a2be2' , '#cc99ff'],
+        annotations: {
+    xaxis: [{
+      x:'2:00 PM' , // index of the category where you want to add the dividing line
+      strokeDashArray: 7,
+      borderColor: '#b3b3cc',
+      borderWidth: 3,
+      label: {
+        text: '2:00 PM',
+      }
+    }]
+  },
+        fill: {
+          type: 'gradient',
+          gradient: {
+            shade: 'dark',
+            gradientToColors: ['#8a2be2' , '#cc99ff','#cc66ff' ,'#550080'],
+            shadeIntensity: 1,
+            type: 'horizontal',
+            opacityFrom: 1,
+            opacityTo: 1,
+            stops: [0, 100, 100, 100]
+          },
+        },
+        yaxis: {
+          min: -10,
+          max: 40
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+</script>
+</body>
+</html>
