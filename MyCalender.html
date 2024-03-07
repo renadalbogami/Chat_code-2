@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!-- Include Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Include your desired Flatpickr theme CSS -->
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/Default.css">
+    <link rel="stylesheet" href="myCalenderStaly.css">
+    <!-- add link ghaida test -->
+    <link rel="stylesheet" href="{% static 'css/AI_CSS/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/AI_CSS/style.css' %}">
+    <title>Smart Monitoring</title>
+</head>
+<body>
+         <!-- Input field for date using Flatpickr -->
+         <div class="dropdown">
+          <button type="button" id="DateInput" class="button">Choose Date</button>
+          <i class="arrowdown"></i>
+          <span class="dropdown-arrow"></span>
+          <div class="dropdown-content" id="dateDropdown"></div>
+        </div>
+          <div class="dropdown">
+            <button class="dropbtn">StreamID</button>
+            <i class="arrowdown1"></i>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Strem-1</a>
+              <a href="#">Strem-2</a>
+              <a href="#">Strem-3</a>
+              <a href="#">Strem-4</a>
+            </div>
+          </div>   
+         <br>
+         <br>
+         <br>
+         <br>
+    </div>
+        <div class="grid-item">
+            <div id="chart"></div>
+        </div>     
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+        <!-- Include Flatpickr library --> 
+    // Initialize Flatpickr The DateInput 
+    flatpickr("#DateInput", {
+            dateFormat: "Y-m-d",
+            theme: "Default",
+            clickOpens: true, // This ensures the calendar opens when the button is clicked
+            appendTo: document.body,
+            onOpen: function(selectedDates, dateStr, instance) {
+                dateDropdown.classList.add('show');
+            },
+            onClose: function(selectedDates, dateStr, instance) {
+                dateDropdown.classList.remove('show');
+            }
+        });
+        // When the user clicks on the button, toggle between hiding and showing the dropdown content
+document.querySelector(".dropbtn").onclick = function() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>

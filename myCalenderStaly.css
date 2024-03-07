@@ -1,0 +1,104 @@
+
+   .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a {
+     color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+     display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #8a2be2}
+.dropbtn:hover {background-color: #8a2be2}
+.button:hover {background-color: #8a2be2}
+
+/* Show the dropdown menu on click */
+.show {display:block;}
+    /*calender*/
+    #DateInput {
+        width: 200px;
+        border: 1px solid #07000e;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px; 
+        cursor: pointer;/*The element is clickale*/
+        position: relative;
+        margin-left: 440%;
+        margin-top: 30%;
+        justify-content: space-evenly;
+        color: black;
+        box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
+        -10px -10px 10px -1px rgba(255,255,255,0.70);            
+}
+    
+    /*insadi of The StremID*/
+    #myDropdown {
+        width: 50px;
+        border: 1px solid #07000e;
+        padding: 12px 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        color: rgb(117, 46, 165);
+        margin-top: -4%;
+        margin-left: 450%;
+        
+    }
+    /*outsadi of The StremID*/
+    .dropbtn {
+        width: 200px;
+        border: 1px solid #07000e;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px; 
+        cursor: pointer;/*The element is clickale*/
+        position: relative;
+        margin-left: 440%;
+        margin-top: 41%;
+        justify-content: space-evenly;
+        color: black;
+        box-shadow: 10px 10px 10px -1px rgba(10,99,169,0.16),
+                    -10px -10px 10px -1px rgba(255,255,255,0.70);            
+    }
+ 
+  /*DateInput*/
+  .arrowdown{
+    border: 1px solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 520%;
+    margin-top: -32%;
+    vertical-align: middle;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  /*StremID*/
+  .arrowdown1{
+    border: 1px solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 520%;
+    margin-top: -32%;
+    vertical-align: middle;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+
+
+
